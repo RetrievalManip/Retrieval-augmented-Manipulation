@@ -1,0 +1,7 @@
+{
+    "cam_paras_file": "${PROJECT_ROOT}/controller/assets/calibration/hand_camera/realsense_paras.json",
+    "preset_file": "${PROJECT_ROOT}/controller/assets/calibration/hand_camera/realsense_HighResHighAccuracyPreset.json",
+    "fps": 30,
+    "max_depth": 2000,
+    "type": "hand"
+}

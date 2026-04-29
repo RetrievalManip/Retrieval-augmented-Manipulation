@@ -1,0 +1,24 @@
+{
+    "name": "bowl",
+    "primitives": {
+        "grasp_0": {
+            "type": "grasp",
+            "description": "this grasp point is located on the rim of the bowl",
+            "position": [-480.98367,-35.633537,212.59381 ],
+            "orientation": [180.0,-13.467295,2.8196168]
+        },
+        "plane_0": {
+            "type": "plane",
+            "description": "This plane is a horizontal plane defined by the rim of the bowl. Its centroid is located at the geometric center of the circular opening of the rim",
+            "position": [-6.793137,-30.83536,234.26907 ],
+            "orientation": [5.9259043e-04,3.6355813e-03,9.9999321e-01]
+        },
+        "plane_1": {
+            "type": "plane",
+            "description": "This plane is a horizontal plane defined by the base of the bowl. Its centroid is positioned at the geometric center of the bowl's bottom surface, and this plane is parallel to the rim plane.",
+            "position": [15.757448,14.173333,-235.69258 ],
+            "orientation": [-0.00171855,-0.00312728,0.9999936 ],
+            "align_with_axis": "z"
+        }
+    }
+}

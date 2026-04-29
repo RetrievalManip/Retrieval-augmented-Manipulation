@@ -1,0 +1,6 @@
+{
+    "cam_paras_file": "${PROJECT_ROOT}/controller/assets/calibration/external_camera/zed_paras.json",
+    "fps": 30,
+    "max_depth": 5000,
+    "type": "external"
+}

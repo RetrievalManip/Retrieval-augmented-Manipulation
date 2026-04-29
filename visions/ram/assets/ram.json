@@ -1,0 +1,5 @@
+{
+    "ram_checkpoint": "${PROJECT_ROOT}/visions/ram/checkpoints/ram_model.pth",
+    "template_dir": "${PROJECT_ROOT}/visions/ram/template",
+    "ram_k": 5
+}

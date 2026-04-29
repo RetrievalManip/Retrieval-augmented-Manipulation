@@ -1,0 +1,90 @@
+
+project:
+  root_dir: "${PROJECT_ROOT}"
+
+api:
+  active_profile: "default"
+
+  profiles:
+    default:
+      api_key: ""
+      base_url: ""
+      model_name: ""
+      max_tokens: 8192
+      temperature: 0.3
+
+vision:
+  grounding:
+    sam2_checkpoint: ""
+    sam2_model_config: ""
+    grounding_dino_config: "${PROJECT_ROOT}/visions/grounding/grounding_dino/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+    grounding_dino_checkpoint: "${PROJECT_ROOT}/checkpoints/groundingdino_swint_ogc.pth"
+    box_threshold: 0.35
+    text_threshold: 0.25
+    device: "cuda:0"
+
+  ram:
+    checkpoint: "${PROJECT_ROOT}/visions/ram/checkpoints/ram_model.pth"
+    template_dir: "${PROJECT_ROOT}/visions/ram/template"
+    ram_k: 5
+    foundation_model: "dinov2-b14"
+    feat_layer: [7, 9, 11]
+    img_size: 224
+    n_pts: 1024
+    device: "cuda:0"
+
+cameras:
+  recording:
+    buffer_size: 5
+    fps: 2
+
+  zed:
+    paras_file: "${PROJECT_ROOT}/controller/assets/calibration/external_camera/zed_paras.json"
+    max_depth: 5000
+    fps: 30
+    depth_mode: "ULTRA"
+    settings:
+      confidence_threshold: 80
+      exposure: 60
+      brightness: 6
+      contrast: 4
+      gain: 4
+
+  realsense_d455:
+    paras_file: "${PROJECT_ROOT}/controller/assets/calibration/external_camera/realsense455_paras.json"
+    max_depth: 10000
+    fps: 30
+
+  realsense_d435:
+    paras_file: "${PROJECT_ROOT}/controller/assets/calibration/hand_camera/realsense_paras.json"
+    max_depth: 2000
+    fps: 30
+
+robot:
+  ip: ""
+  reset_pos: [480, -110, 500, -179, 0, -90]
+  workspace: [385, -330, -130, 900, 300, 290]
+  gripper:
+    idx: 1
+    offset: 20
+    close_width: 5
+
+planner:
+  map_size: 100
+  workspace: [0, -600, -500, 1200, 600, 700]
+  table_height: -100
+
+task:
+  default_prompt: "clean the table"
+  output_dir: "${PROJECT_ROOT}/outputs"
+  max_rounds: 10
+
+  object_categories:
+    static_seg_ram: ["table", "dustpan", "trashcan"]
+    dynamic_seg_only: ["other"]
+    dynamic_seg_ram: ["brush"]
+
+debug:
+  enabled: false
+  save_intermediate: false
+  output_dir: "${PROJECT_ROOT}/debug_output"
