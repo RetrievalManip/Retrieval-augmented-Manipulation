@@ -42,7 +42,7 @@ Some dependencies are platform-specific and are therefore not installed by `requ
 - ZED SDK Python bindings, required by `ZEDCamera`.
 - RealSense Python bindings, required by D435/D455 cameras.
 - Model checkpoints for GroundingDINO/SAM2, DINOv2, and VGGT.
-- A local GroundingDINO/SAM2 adapter for `visions/grounding/dino_grounding.py`.
+- Grounded-SAM-2, used by `visions/grounding/dino_grounding.py`. Please follow the original [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2) repository and install/configure it under `visions/grounding/Grounded-SAM-2`.
 
 Please edit [config/config.yaml](config/config.yaml) to match your local paths, devices, robot IP, camera calibration files, checkpoints, and RAM template location.
 
@@ -59,7 +59,7 @@ blenderproc run render_ram_training_scenes.py \
   --views-per-scene 25
 ```
 
-This command reads textures from `assets/cc_textures/`, CAD metadata and meshes from `bop_datasets/ram/models/`, and writes BOP-style output under `outputs/training_scenes/bop_data/ram/`. Please download [cc_textures](https://gocuhk-my.sharepoint.com/:u:/r/personal/kaichen_cuhk_edu_hk/Documents/cc_textures.zip?csf=1&web=1&e=YxIogG) and [models](https://gocuhk-my.sharepoint.com/:u:/g/personal/kaichen_cuhk_edu_hk/IQCEY11EZwtFSJni0OehvLQ8AacgKvg644gSwBTeGpd9keE?e=IUomBe), and move them to the corresponding folder before synthetic data generation.
+This command reads textures from `assets/cc_textures/`, CAD metadata and meshes from `bop_datasets/ram/models/`, and writes BOP-style output under `outputs/training_scenes/bop_data/ram/`. Please download [cc_textures](https://gocuhk-my.sharepoint.com/:u:/g/personal/kaichen_cuhk_edu_hk/IQDKwAASO4XCSp9xlQcvgED_AbHDRVn4Lc9o2gq9NTQ69oQ?e=MzSOO8) and [models](https://gocuhk-my.sharepoint.com/:u:/g/personal/kaichen_cuhk_edu_hk/IQCEY11EZwtFSJni0OehvLQ8AacgKvg644gSwBTeGpd9keE?e=IUomBe), and move them to the corresponding folder before synthetic data generation.
 
 To render a subset of objects, please use `--object-ids`:
 
@@ -152,6 +152,7 @@ The annotator exports primitive metadata such as `contact_point_*`, `plane_*`, `
 Please refer to the upstream projects for installation and configuration of the external components used by this repository:
 
 - [GroundingDINO](https://github.com/idea-research/groundingdino), used by the visual grounding adapter.
+- [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2), used by `visions/grounding/dino_grounding.py`.
 - [VGGT](https://github.com/facebookresearch/vggt), used by the RAM step for point cloud reconstruction.
 
 Large assets are intentionally not committed to this repository. Please download or prepare them separately before running the corresponding components.

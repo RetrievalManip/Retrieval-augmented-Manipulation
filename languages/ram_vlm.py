@@ -232,7 +232,7 @@ class RamVLM(BaseVLM):
     def infer_objects_label(self, image, object_items, max_tokens=5000):
         message = []
         for j in range(3):
-            prompt_path = opj(cur_pth, 'assets', 'find_objects')
+            prompt_path = opj(cur_pth, 'assets', 'find_objects_label')
             text_prompt_path = f'{prompt_path}/prompt{j + 1}.md'
             image_prompt_path = f'{prompt_path}/prompt{j + 1}.png'
 

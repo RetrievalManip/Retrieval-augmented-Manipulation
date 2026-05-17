@@ -15,8 +15,8 @@ api:
 
 vision:
   grounding:
-    sam2_checkpoint: ""
-    sam2_model_config: ""
+    sam2_checkpoint: "${PROJECT_ROOT}/visions/grounding/Grounded-SAM-2/checkpoints/sam2.1_hiera_large.pt"
+    sam2_model_config: "${PROJECT_ROOT}/visions/grounding/Grounded-SAM-2/sam2/configs/sam2.1/sam2.1_hiera_l.yaml"
     grounding_dino_config: "${PROJECT_ROOT}/visions/grounding/grounding_dino/groundingdino/config/GroundingDINO_SwinT_OGC.py"
     grounding_dino_checkpoint: "${PROJECT_ROOT}/checkpoints/groundingdino_swint_ogc.pth"
     box_threshold: 0.35

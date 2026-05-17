@@ -91,8 +91,7 @@ def main():
         './controller/assets/calibration/external_camera', 'zed_config.json')
     extern_camera = ExternCameraCallbacks['ZED'](config_file=config_file)
 
-    config_file = os.path.join(cur_dir, './visions/grounding/assets', 'dino_grounding.json')
-    vgm = DinoGrounding(config_file=config_file)
+    vgm = DinoGrounding()
 
 
     rgb_ext, depth_ext = extern_camera.capture_image()
