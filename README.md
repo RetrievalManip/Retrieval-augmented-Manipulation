@@ -192,6 +192,13 @@ step3_planning.py    # decompose the task into VLM action constraints
 step4_conducting.py  # parse VLM actions, generate trajectories, and execute them with the robot
 ```
 
+## Related Projects
+
+Readers interested in the broader RetrievalManip project family, where category-level templates and retrieved priors are used for object-centric manipulation, dexterous grasp generation, and deformation modeling, may also find the following repositories useful:
+
+- [CMT-Diffusion](https://github.com/Yiyao-Ma/cmtdiffusion): a template-transfer framework for generalizable dexterous grasp generation, where a conditional diffusion model transfers high-quality grasps from shape templates to novel objects within the same category.
+- [GODeform](https://github.com/Yiyao-Ma/GODeform): a geometry-guided deformation learning framework that deforms a category-level shape template using foundation features for generalizable object shape reconstruction/deformation modeling.
+
 ## Citation
 
 If you find this project useful, please consider citing:
@@ -201,6 +208,27 @@ If you find this project useful, please consider citing:
   title={A retrieval-augmented framework enabling VLM spatial awareness for object-centric robot manipulation},
   author={Chen, Kai and Li, Chengkun and Tu, Chang and Pan, Jiahui and Ma, Yiyao and Chen, Wei and Zhou, Zhongxiang and Xu, Xuecheng and James, Stephen and Fu, Chi-Wing and Xiong, Rong and Abbeel, Pieter and Liu, Yun-Hui and Dou, Qi},
   journal={Science Robotics},
+  year={2026}
+}
+```
+
+For the related RetrievalManip projects above, please also consider citing:
+
+```bibtex
+@inproceedings{macontact,
+  title={Contact Map Transfer with Conditional Diffusion Model for Generalizable Dexterous Grasp Generation},
+  author={Ma, Yiyao and Chen, Kai and Zheng, Kexin and Dou, Qi},
+  booktitle={Neural Information Processing Systems (NeurIPS)},
+  month={December},
+  year={2025}
+}
+```
+```bibtex
+@inproceedings{ma2026godeform,
+  title={Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning},
+  author={Ma, Yiyao and Chen, Kai and Zhou, Zhongxiang and Song, Zhuheng and Xie, Dongsheng and Tan, Zelong and Xiong, Rong and Dou, Qi},
+  booktitle={International Conference on Machine Learning (ICML)},
+  month={July},
   year={2026}
 }
 ```
